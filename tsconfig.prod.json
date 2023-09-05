@@ -1,8 +1,9 @@
 {
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-      "declaration": true,
-        "removeComments": true
-    },
-    "exclude": ["**/*.test.*"]
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "removeComments": true
+  },
+  "include": ["src"],
+  "exclude": ["**/*.test.*"]
 }

@@ -1,3 +1,2 @@
-export function greet(name: string): string {
-  return `Hello, ${name}!`;
-}
+export { greet } from "./greet.js";
+export { add } from "./add.js";
