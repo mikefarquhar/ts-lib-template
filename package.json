@@ -24,7 +24,7 @@
     "test:watch": "vitest",
     "test": "vitest run --coverage",
     "prepublishOnly": "npm run lint && npm run format && npm run coverage && npm run build",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "files": [
     "package.json",
@@ -33,12 +33,12 @@
     "lib/**/*"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
     "@vitest/coverage-v8": "^1.2.0",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "lint-staged": "^15.2.0",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.1",
