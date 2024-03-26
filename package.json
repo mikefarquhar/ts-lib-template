@@ -19,28 +19,19 @@
     "clean": "rimraf lib coverage",
     "dev": "tsc -p ./tsconfig.dev.json --watch",
     "build": "rimraf lib && tsc -p ./tsconfig.prod.json",
-    "lint": "eslint src/**/* --ext .ts",
-    "format": "prettier -c -u src/**/*",
+    "lint": "biome lint .",
+    "format": "biome format .",
     "test:watch": "vitest",
     "test": "vitest run --coverage",
     "prepublishOnly": "npm run lint && npm run format && npm run coverage && npm run build",
     "prepare": "husky"
   },
-  "files": [
-    "package.json",
-    "LICENSE",
-    "README.md",
-    "lib/**/*"
-  ],
+  "files": ["package.json", "LICENSE", "README.md", "lib/**/*"],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@biomejs/biome": "^1.6.3",
     "@vitest/coverage-v8": "^1.2.0",
-    "eslint": "^8.48.0",
-    "eslint-config-prettier": "^9.0.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.0.3",
     "rimraf": "^5.0.1",
     "typescript": "^5.2.2",
     "vitest": "^1.2.0"

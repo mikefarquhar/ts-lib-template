@@ -1,14 +1,12 @@
 export default {
   "**/*.js": (files) => [
-    `eslint --fix ${files.join(" ")}`,
-    `prettier --write --ignore-unknown ${files.join(" ")}`,
+    `biome lint --apply ${files.join(" ")}`,
+    `biome format --write ${files.join(" ")}`,
   ],
   "**/*.ts": (files) => [
-    `tsc -p ./tsconfig.json --noEmit`,
-    `eslint --fix ${files.join(" ")}`,
-    `prettier --write --ignore-unknown ${files.join(" ")}`,
+    "tsc -p ./tsconfig.json --noEmit",
+    `biome lint --apply ${files.join(" ")}`,
+    `biome format --write ${files.join(" ")}`,
   ],
-  "**/!(*.js|*.ts)": (files) => [
-    `prettier --write --ignore-unknown ${files.join(" ")}`,
-  ],
+  "**/!(*.js|*.ts)": (files) => [`biome format --write ${files.join(" ")}`],
 };
