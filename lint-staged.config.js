@@ -1,12 +1,12 @@
 export default {
   "**/*.js": (files) => [
-    `biome lint --apply ${files.join(" ")}`,
-    `biome format --write ${files.join(" ")}`,
+    `biome check --write --no-errors-on-unmatched ${files.join(" ")}`,
   ],
   "**/*.ts": (files) => [
     "tsc -p ./tsconfig.json --noEmit",
-    `biome lint --apply ${files.join(" ")}`,
-    `biome format --write ${files.join(" ")}`,
+    `biome check --write --no-errors-on-unmatched ${files.join(" ")}`,
   ],
-  "**/!(*.js|*.ts)": (files) => [`biome format --write ${files.join(" ")}`],
+  "**/!(*.js|*.ts)": (files) => [
+    `biome check --write --no-errors-on-unmatched --files-ignore-unknown true ${files.join(" ")}`,
+  ],
 };

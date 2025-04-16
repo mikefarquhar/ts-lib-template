@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
     "ignoreUnknown": true,
-    "ignore": ["**/lib/**", "**/coverage/**"]
+    "ignore": ["package.json", "**/lib/**", "**/coverage/**"]
   },
   "formatter": {
     "indentStyle": "space"
